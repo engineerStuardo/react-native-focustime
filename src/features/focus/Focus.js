@@ -40,7 +40,6 @@ const styles = StyleSheet.create({
   innerContainer: {
     flex: 0.5,
     padding: spacing.md,
-    paddingTop: 150,
     justifyContent: 'center',
   },
   title: {
