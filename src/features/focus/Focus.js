@@ -16,14 +16,14 @@ export const Focus = ({ addSubject }) => {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.textInput}
-            label="Type a task"
-            Type="outlined"
+            label='Type a task'
+            Type='outlined'
             onSubmitEditing={({ nativeEvent }) => {
               setSubject(nativeEvent.text);
             }}
           />
           <RoundedButton
-            title="+"
+            title='+'
             size={50}
             onPress={() => addSubject(subject)}
           />
@@ -36,6 +36,8 @@ export const Focus = ({ addSubject }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 0.5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   innerContainer: {
     flex: 0.5,
