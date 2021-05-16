@@ -17,7 +17,6 @@ export const Focus = ({ addSubject }) => {
           <TextInput
             style={styles.textInput}
             label='Type a task'
-            Type='outlined'
             onSubmitEditing={({ nativeEvent }) => {
               setSubject(nativeEvent.text);
             }}
