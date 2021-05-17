@@ -43,8 +43,9 @@ export default function App() {
   const loadFocusHistory = async () => {
     try {
       const history = await AsyncStorage.getItem('focusHistory');
-      if (history && JSON.parse(history).length) {
-        setFocusHistory(JSON.parse(history));
+      const data = JSON.parse(history);
+      if (history && data.length) {
+        setFocusHistory(data);
       }
     } catch (e) {
       console.log(e);
@@ -64,7 +65,7 @@ export default function App() {
             addFocusHistorySubjectWithStatus(focusSubject, STATUES.COMPLETE);
             setFocusSubject(null);
           }}
-          clearSubject={() => {
+          cancelledSubject={() => {
             addFocusHistorySubjectWithStatus(focusSubject, STATUES.CANCELLED);
             setFocusSubject(null);
           }}
