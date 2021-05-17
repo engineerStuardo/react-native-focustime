@@ -18,8 +18,8 @@ export const Timer = ({ focusSubject, onTimeEnd, cancelledSubject }) => {
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(DEFAULT_TIME);
 
-  const onProgress = progress => {
-    setProgress(progress);
+  const onProgress = progressNumber => {
+    setProgress(progressNumber);
   };
 
   const changeTime = min => {

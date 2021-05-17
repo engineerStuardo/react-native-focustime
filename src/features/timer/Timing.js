@@ -7,7 +7,7 @@ export const Timing = ({ onChangeTime }) => {
   return (
     <View style={styles.timingContainer}>
       <RoundedButton
-        style={{ marginRight: 25, marginLeft: 20 }}
+        style={{ marginRight: 25}}
         title='10'
         size={75}
         onPress={() => onChangeTime(10)}
@@ -19,7 +19,6 @@ export const Timing = ({ onChangeTime }) => {
         onPress={() => onChangeTime(15)}
       />
       <RoundedButton
-        style={{ marginRight: 25 }}
         title='20'
         size={75}
         onPress={() => onChangeTime(20)}
