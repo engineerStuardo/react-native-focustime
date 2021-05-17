@@ -5,23 +5,33 @@ import { RoundedButton } from '../../components/RoundedButton';
 
 export const Timing = ({ onChangeTime }) => {
   return (
-    <>
-      <View style={styles.timingButton}>
-        <RoundedButton title="10" size={75} onPress={() => onChangeTime(10)} />
-      </View>
-      <View style={styles.timingButton}>
-        <RoundedButton title="15" size={75} onPress={() => onChangeTime(15)} />
-      </View>
-      <View style={styles.timingButton}>
-        <RoundedButton title="20" size={75} onPress={() => onChangeTime(20)} />
-      </View>
-    </>
+    <View style={styles.timingContainer}>
+      <RoundedButton
+        style={{ marginRight: 25, marginLeft: 20 }}
+        title='10'
+        size={75}
+        onPress={() => onChangeTime(10)}
+      />
+      <RoundedButton
+        style={{ marginRight: 25 }}
+        title='15'
+        size={75}
+        onPress={() => onChangeTime(15)}
+      />
+      <RoundedButton
+        style={{ marginRight: 25 }}
+        title='20'
+        size={75}
+        onPress={() => onChangeTime(20)}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  timingButton: {
+  timingContainer: {
     flex: 1,
-    alignContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
   },
 });

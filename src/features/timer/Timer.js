@@ -11,18 +11,18 @@ import { spacing } from '../../utils/sizes';
 
 const DEFAULT_TIME = 0.1;
 
-export const Timer = ({ focusSubject, onTimeEnd, clearSubject }) => {
+export const Timer = ({ focusSubject, onTimeEnd, cancelledSubject }) => {
   useKeepAwake();
 
   const [isStarted, setIsStarted] = useState(false);
   const [progress, setProgress] = useState(1);
   const [minutes, setMinutes] = useState(DEFAULT_TIME);
 
-  const onProgress = (progress) => {
+  const onProgress = progress => {
     setProgress(progress);
   };
 
-  const changeTime = (min) => {
+  const changeTime = min => {
     setMinutes(min);
     setProgress(1);
     setIsStarted(false);
@@ -64,7 +64,7 @@ export const Timer = ({ focusSubject, onTimeEnd, clearSubject }) => {
       <View style={{ paddingTop: spacing.sm }}>
         <ProgressBar
           progress={progress}
-          color="#5E84E2"
+          color='#5E84E2'
           style={{ height: 10 }}
         />
       </View>
@@ -73,13 +73,13 @@ export const Timer = ({ focusSubject, onTimeEnd, clearSubject }) => {
       </View>
       <View style={styles.buttonWrapper}>
         {isStarted ? (
-          <RoundedButton title="pause" onPress={() => setIsStarted(false)} />
+          <RoundedButton title='pause' onPress={() => setIsStarted(false)} />
         ) : (
-          <RoundedButton title="start" onPress={() => setIsStarted(true)} />
+          <RoundedButton title='start' onPress={() => setIsStarted(true)} />
         )}
       </View>
-      <View style={styles.clearSubject}>
-        <RoundedButton size={50} title="-" onPress={() => clearSubject()} />
+      <View style={styles.cancelledSubject}>
+        <RoundedButton size={50} title='-' onPress={() => cancelledSubject()} />
       </View>
     </View>
   );
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
   },
-  clearSubject: {
+  cancelledSubject: {
     paddingBottom: 25,
     paddingLeft: 25,
   },
